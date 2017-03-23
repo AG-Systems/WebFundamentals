@@ -49,7 +49,7 @@ current time, duration and time tracking.
 ### Read video metadata
 
 First, let's wait for the video metadata to be loaded to set the video
-duration, the current time and initialize the progress bar. Note that the
+duration, the current time, and initialize the progress bar. Note that the
 `secondsToTimeCode` function is a custom utility function I've written that
 converts a number of seconds to a string in "hh:mm:ss" format which is better
 suited in our case.
@@ -110,8 +110,8 @@ controls) from being notified of the click event.
 
 Rather than adjusting our video controls in the `click` event listener, we use
 the `play` and `pause` video events. When video starts playing, we change the
-button state to "pause" and hide video controls. When the video pauses, we
-simply change button state to "play" and show video controls.
+button state to "pause" and hide the video controls. When the video pauses, we
+simply change button state to "play" and show the video controls.
 
     video.addEventListener('play', function() {
       playPauseButton.classList.toggle('paused', true);
@@ -131,9 +131,9 @@ When time indicated by video `currentTime` attribute changed via the
       videoProgressBar.style.width = `${video.currentTime * 100 / video.duration}%`;
     }
 
-When video ends, we simply change button state to "play" and show video
+When the video ends, we simply change button state to "play" and show video
 controls for now as well. Note that we could also choose to load automatically
-another video if user has enabled some kind of "AutoPlay" feature.
+another video if the user has enabled some kind of "AutoPlay" feature.
 
     video.addEventListener('ended', function() {
       playPauseButton.classList.toggle('paused', false);
